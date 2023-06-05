@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Iniciar sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('URL_DE_LA_IMAGEN');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+            box-sizing: border-box;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 40px;
+            box-sizing: border-box;
+        }
+
+        #username {
+            background-image: url('usuario.png');
+        }
+
+        #password {
+            background-image: url('contraseña.png');
+        }
+
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 5px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm" onsubmit="return login()">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <input type="submit" value="Iniciar sesión">
+            <p id="errorText" class="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorText = document.getElementById("errorText");
+
+            // Lógica de autenticación
+            // Verificar credenciales o realizar una solicitud a un servicio externo
+
+            if (username === "admin" && password === "password") {
+                // Autenticación exitosa
+                errorText.textContent = "";
+                alert("Inicio de sesión exitoso");
+                return true;
+            } else {
+                // Autenticación fallida
+                errorText.textContent = "Usuario o contraseña incorrectos";
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
